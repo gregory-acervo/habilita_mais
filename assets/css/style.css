@@ -1,0 +1,260 @@
+/* =========================
+   RESET, REVISAR PQ FEITO POR IA
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+/* =========================
+   VARIABLES
+========================= */
+
+:root {
+  --bg-primary: #efe7dc;
+  --bg-secondary: #f5f5f5;
+
+  --text-primary: #1e1e28;
+  --text-secondary: #6d6d78;
+
+  --accent: #f4b400;
+  --accent-hover: #e5a700;
+
+  --border: #d6d6d6;
+
+  --success: #17a34a;
+
+  --radius: 12px;
+
+  --font:
+    "Segoe UI",
+    Tahoma,
+    Geneva,
+    Verdana,
+    sans-serif;
+}
+
+/* =========================
+   BASE
+========================= */
+
+body {
+  font-family: var(--font);
+  background: #ffffff;
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+  background: var(--bg-primary);
+  min-height: 72vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 80px 24px;
+}
+
+.hero__container {
+  width: 100%;
+  max-width: 900px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero__logo {
+  width: 110px;
+  margin-bottom: 28px;
+}
+
+.hero__content {
+  max-width: 650px;
+  text-align: center;
+}
+
+.hero__content h1 {
+  font-size: 2.1rem;
+  line-height: 1.3;
+  font-weight: 500;
+  letter-spacing: -0.5px;
+}
+
+.hero__content span {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.hero__actions {
+  display: flex;
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.btn {
+  min-width: 170px;
+  height: 52px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: var(--radius);
+
+  font-size: 1rem;
+  font-weight: 600;
+
+  transition:
+    background 0.25s ease,
+    border 0.25s ease,
+    transform 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn--primary {
+  background: var(--accent);
+  color: #1d1d1d;
+}
+
+.btn--primary:hover {
+  background: var(--accent-hover);
+}
+
+.btn--secondary {
+  border: 1px solid var(--border);
+  background: #ffffff;
+  color: #3a3a3a;
+}
+
+/* =========================
+   FEATURES
+========================= */
+
+.hero__features {
+  margin-top: 42px;
+
+  display: flex;
+  align-items: center;
+  gap: 32px;
+
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.hero__features li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.icon {
+  width: 18px;
+  height: 18px;
+
+  border: 1.5px solid var(--success);
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--success);
+
+  font-size: 0.7rem;
+  font-weight: bold;
+}
+
+/* =========================
+   ABOUT
+========================= */
+
+.about {
+  background: var(--bg-secondary);
+  padding: 90px 24px;
+}
+
+.about__container {
+  max-width: 900px;
+  margin: 0 auto;
+
+  text-align: center;
+}
+
+.about__container h2 {
+  font-size: 3rem;
+  line-height: 1.1;
+  font-weight: 800;
+
+  margin-bottom: 18px;
+}
+
+.about__container p {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+  .hero {
+    padding: 64px 20px;
+  }
+
+  .hero__content h1 {
+    font-size: 1.7rem;
+  }
+
+  .hero__actions {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .about__container h2 {
+    font-size: 2.2rem;
+  }
+
+}
