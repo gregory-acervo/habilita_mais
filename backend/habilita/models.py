@@ -18,12 +18,19 @@ class AulaTeorica(EtapaFormacao):
     tema = models.CharField(max_length=200)
     presenca = models.BooleanField(default=False)
 
+    class Meta:
+        verbose_name = "Aula Teórica"
+        verbose_name_plural = "Aulas Teóricas"
 
 class AulaPratica(EtapaFormacao):
     #instrutor = models.ForeignKey(...)
     #veiculo = models.ForeignKey(...)
     percurso = models.CharField(max_length=400)
     presenca = models.BooleanField(default=False)
+    
+    class Meta:
+        verbose_name = "Aula Prática"
+        verbose_name_plural = "Aulas Práticas"
 
 class ExameTeorico(EtapaFormacao):
     #aplicador = models.ForeignKey(...)
@@ -34,9 +41,17 @@ class ExameTeorico(EtapaFormacao):
         blank=True
     )
     resultado = models.CharField(max_length=20)
+    
+    class Meta:
+        verbose_name = "Exame Teórico"
+        verbose_name_plural = "Exames Teóricos"
 
 class ExamePratico(EtapaFormacao):
     #examinador = models.ForeignKey(...)
     #veiculo = models.ForeignKey(...)
     faltas = models.PositiveIntegerField(default=0)
     resultado = models.CharField(max_length=20)
+    
+    class Meta:
+        verbose_name = "Exame Prático"
+        verbose_name_plural = "Exames Práticos"

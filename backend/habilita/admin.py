@@ -1,3 +1,20 @@
 from django.contrib import admin
+from .models import AulaPratica, AulaTeorica, ExamePratico, ExameTeorico
 
-# Register your models here.
+#Register your models here
+
+@admin.register(AulaTeorica)
+class AulaTeoricaAdmin(admin.ModelAdmin):
+    list_display = ['tema', 'presenca']
+
+@admin.register(AulaPratica)
+class AulaPraticaAdmin(admin.ModelAdmin):
+    list_display = ['percurso', 'presenca']
+
+@admin.register(ExameTeorico)
+class ExameTeoricoAdmin(admin.ModelAdmin):
+    list_display = ['nota', 'resultado']
+
+@admin.register(ExamePratico)
+class ExamePraticoAdmin(admin.ModelAdmin):
+    list_display = ['faltas', 'resultado']
