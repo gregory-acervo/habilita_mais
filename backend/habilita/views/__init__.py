@@ -1,1 +1,3 @@
-from .etapa_views import listar_aulas, listar_exames
+from .system import listar_aulas, listar_exames
+from .public import home, cadastro
+

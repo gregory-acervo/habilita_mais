@@ -91,8 +91,8 @@ body {
 }
 
 .hero__logo {
-  width: 110px;
-  margin-bottom: 28px;
+  width: 440px;
+  margin-bottom: 20px;
 }
 
 .hero__content {
@@ -160,9 +160,9 @@ body {
   color: #3a3a3a;
 }
 
-/* =========================
-   FEATURES
-========================= */
+
+   /* FEATURES */
+
 
 .hero__features {
   margin-top: 42px;
