@@ -22,5 +22,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 2. LOG DE BOAS-VINDAS NO CONSOLE
     // Ótimo para os alunos testarem se o arquivo JS carregou de verdade
-    console.log("🛒 [E-Commerce Django] Script main.js carregado com sucesso!");
+    console.log("🚗 [Habilita+] Script main.js carregado com sucesso!");
 });
