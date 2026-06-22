@@ -29,7 +29,6 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
     padding: 1.5rem;
 }
 
@@ -38,7 +37,7 @@ body {
     margin-bottom: 2rem;
 }
 
-.brand__icon {
+.brand__img {
     width: 48px;
     height: 48px;
 
@@ -81,31 +80,6 @@ body {
     color: var(--muted);
     font-size: .9rem;
     margin-bottom: 1rem;
-}
-
-.tabs {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-
-    background: #f1f1f1;
-    border-radius: 8px;
-
-    margin-bottom: 1rem;
-    padding: 4px;
-}
-
-.tab {
-    border: none;
-    background: transparent;
-    cursor: pointer;
-
-    padding: .75rem;
-    border-radius: 6px;
-}
-
-.tab.active {
-    background: white;
-    box-shadow: 0 2px 5px rgba(0,0,0,.08);
 }
 
 .form {
