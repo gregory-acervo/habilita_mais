@@ -4,6 +4,23 @@ from django.db import models
 
 # Arrumar as ForeignKeys e ver se coloca slug ou id
 
+class Cliente(models.Model):
+    nome = models.CharField(max_length=300)
+    cpf = models.CharField(max_length=14, unique=True)
+    email = models.EmailField(unique=True)
+    telefone = models.CharField(max_length=15)
+    senha = models.CharField(max_length=128)
+    data_criacao = models.DateTimeField(auto_now_add=True)
+    ativo = models.BooleanField(default=True)
+
+    class Meta:
+        verbose_name = "Cliente"
+        verbose_name_plural = "Clientes"
+
+    def __str__(self):
+        return self.nome
+
+
 class EtapaFormacao(models.Model):
     #aluno = models.ForeignKey(...)
     inicio = models.DateTimeField()

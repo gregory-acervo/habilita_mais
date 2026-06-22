@@ -1,7 +1,12 @@
 from django.contrib import admin
-from .models import AulaPratica, AulaTeorica, ExamePratico, ExameTeorico
+from .models import Cliente, AulaPratica, AulaTeorica, ExamePratico, ExameTeorico
 
 #Register your models here
+
+@admin.register(Cliente)
+class ClienteAdmin(admin.ModelAdmin):
+    list_display = ['nome', 'cpf', 'telefone', 'email', 'data_criacao']
+    search_fields = ['nome', 'cpf', 'email']
 
 @admin.register(AulaTeorica)
 class AulaTeoricaAdmin(admin.ModelAdmin):
