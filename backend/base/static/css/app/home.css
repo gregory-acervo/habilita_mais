@@ -101,11 +101,7 @@ body {
     font-size: 1.1rem;
 }
 
-/* =========================
-   DASHBOARD
-========================= */
-
-.dashboard {
+.home {
     max-width: 1400px;
     margin: 0 auto;
     padding: 2rem;
