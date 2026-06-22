@@ -13,11 +13,11 @@ def login_cliente(request):
 
             try:
                 cliente = Cliente.objects.get(email=email, ativo=True)
-                
+
                 if check_password(senha, cliente.senha):
                     request.session['cliente_id'] = cliente.id
-                    messages.success(request,f"Bem-vindo de volta, {cliente.nome}!]")
-                    return redirect('loja:home')
+                    messages.success(request, f"Bem-vindo de volta, {cliente.nome}!")
+                    return redirect('habilita:cliente_home')
                 else:
                     messages.error(request, "Senha incorreta.")
             except Cliente.DoesNotExist:

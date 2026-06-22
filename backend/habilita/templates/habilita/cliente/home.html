@@ -1,68 +1,65 @@
-{%load static%}
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{%static 'css/app/home.css'%}">
-    <title>Document</title>
-</head>
-|
-<body>
+{% extends 'templates/base.html' %}
+{% load static %}
 
-<!-- COLOCAR NAV HEADER (EXTENDS)-->
-    
+{% block title %}Habilita+ - Página Inicial{% endblock %}
 
-    <main class="home">
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/app/home.css' %}">
+{% endblock %}
 
-        <section class="welcome">
-            <h1>Olá, João Silva! 👋</h1>
-            <p>Acompanhe seu progresso e próximas etapas</p>
-        </section>
+{% block content %}
+<main class="home">
 
-        <section class="progress-card">
-            <h2>Seu Progresso - Categoria B</h2>
+    <section class="welcome">
+        <h1>Bem-vindo de volta!</h1>
+        <p>Acompanhe seu progresso e próximas etapas</p>
+    </section>
 
-            <div class="progress-bar">
-                <div class="progress-fill"></div>
-            </div>
+    <section class="progress-card">
+        <h2>Seu Progresso - Categoria B</h2>
 
-            <div class="progress-status">
-                <div>Aulas Teóricas</div>
-                <div>Aulas Práticas</div>
-                <div>Exames</div>
-            </div>
-        </section>
+        <div class="progress-bar">
+            <div class="progress-fill"></div>
+        </div>
 
-        <section class="quick-actions">
+        <div class="progress-status">
+            <div>Aulas Teóricas</div>
+            <div>Aulas Práticas</div>
+            <div>Exames</div>
+        </div>
+    </section>
 
-            <article class="action-card">
-                <h3>Agendar Aula</h3>
-            </article>
+    <section class="quick-actions">
 
-            <article class="action-card">
-                <h3>Meus Agendamentos</h3>
-            </article>
+        <article class="action-card">
+            <h3>Agendar Aula</h3>
+        </article>
 
-            <article class="action-card">
-                <h3>Pagamentos</h3>
-            </article>
+        <article class="action-card">
+            <h3>Meus Agendamentos</h3>
+        </article>
 
-            <article class="action-card">
-                <h3>Certificados</h3>
-            </article>
+        <article class="action-card">
+            <h3>Pagamentos</h3>
+        </article>
 
-        </section>
+        <article class="action-card">
+            <h3>Certificados</h3>
+        </article>
 
-        <section class="content-grid">
+    </section>
 
-            <article class="card">
-                <h2>Próximas Aulas</h2>
-            </article>
-            
-        </section>
+    <section class="content-grid">
 
-    </main>
+        <article class="card">
+            <h2>Próximas Aulas</h2>
+        </article>
+        
+    </section>
 
-    <script src="js/index.js"></script>
-</body>
+</main>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'scripts/index.js' %}"></script>
+{% endblock %}

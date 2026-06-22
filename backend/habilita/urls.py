@@ -3,11 +3,11 @@ from . import views
 
 app_name = 'habilita'
 
-urlpatterns = [
-    path('', views.home, name='home'),
-    path('aulas/', views.listar_aulas, name='listar_aulas'),
-    path('login/', views.login_cliente, name='login_cliente'),
+urlpatterns = [   
+    path('cadastro/', views.cadastrar_cliente, name='cadastrar_cliente'),
     path('cliente/', views.cliente_home, name='cliente_home'),
-    path('cadastro/', views.cadastrar_cliente, name='cadastrar_cliente'),   
+    path('login/', views.login_cliente, name='login_cliente'),
+    path('aulas/', views.listar_aulas, name='listar_aulas'),
+    path('', views.home, name='home'),
 ]
 1
