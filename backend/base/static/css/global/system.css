@@ -78,6 +78,11 @@ body {
     
 }
 
+.navbar a:hover{
+    color: var(--primary);
+    text-decoration: none;
+}
+
 .menu {
     display: flex;
     list-style: none;

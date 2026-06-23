@@ -5,6 +5,12 @@ from calendar import HTMLCalendar
 def cliente_home(request):
     return render(request, 'habilita/cliente/home.html')
 
+def agendamento(request):
+    return render(request, 'habilita/cliente/agendamento.html')
+
+def meus_agendamentos(request):
+    return render(request, 'habilita/cliente/meus_agendamentos.html')
+
 def calendario(request):
     calendario = HTMLCalendar()
     calendario_html = calendario.formatmonth(2026, 6)
