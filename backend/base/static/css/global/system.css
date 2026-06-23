@@ -19,7 +19,7 @@
     --text: #111827;
     --text-secondary: #6b7280;
 
-    --border: #e5e7eb;
+    --border: #f1eeee;
     --background: #f8fafc;
     --card: #ffffff;
 
@@ -51,18 +51,31 @@ body {
 }
 
 .navbar {
-    max-width: 1400px;
-    margin: 0 auto;
-
+    max-width: 100%;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-
-    padding: 1rem 2rem;
+    padding: 1rem 4rem;
+    background-color: var(--border);
 }
 
 .navbar img {
-    height: 40px;
+    height: 150px;
+    width: 150px;
+}
+
+.navbar ul{
+    list-style-type: none;
+}
+
+.navbar li{
+    justify-content: left;
+    padding: 1rem;
+}
+
+.navbar a{
+    color: black;
+    text-decoration: none;
+    
 }
 
 .menu {
