@@ -23,7 +23,7 @@ Dentro de `apps/` cada funcionalidade ficou em um app separado:
 
 ```bash
 python -m venv venv
-venv\Scripts\activate
+python venv\Scripts\activate
 pip install -r requirements.txt
 python manage.py runserver
 ```
