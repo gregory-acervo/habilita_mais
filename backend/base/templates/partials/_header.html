@@ -1,20 +1,22 @@
 {% load static %}
-<header>
-    <nav class="navbar">
-        <div class="container">
-            <a href = "{% url 'habilita:listar_produtos'%}"></a>
-            <img src="{% static 'img/logo.png'%}" alt="Habilita+">
+<header class="header">
+  <nav class="navbar">
+    
+      <a href="{% url 'habilita:cliente_home' %}"><img src="{% static 'img/logo.png' %}" alt="Habilita+" /></a>
+      <ul class="menu">
+        <li><a href="{% url 'habilita:cliente_home' %}" class="active">Página Inicial</a>
+        </li>
+        <li>
+          <a href="{%url 'habilita:agendamento'%}">Agendamento</a>
+        </li>
+        <li>
+          <a href="{%url 'habilita:meus_agendamentos'%}">Meus Agendamentos</a>
+        </li>
+      </ul>
 
-            <ul class="nav-links">
-                <li><a href="/" class="active">Página Inicial</a></li>
-                <li><a href="#">Agendamento</a></li>
-                <li><a href="#">Meus Agendamentos</a></li>
-            </ul>
-
-            <div class="nav-actions">
-                <button>👤</button>
-                <button>↪</button>
-            </div>
-        </div>
-    </nav>
+      <div class="nav-actions">
+        <a href="#">👤</a>
+        <a href="{% url 'habilita:index' %}">↪</a>
+      </div>
+  </nav>
 </header>

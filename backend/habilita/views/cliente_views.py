@@ -9,9 +9,12 @@ def cadastrar_cliente(request):
         if form.is_valid():
             form.save()
             messages.success(request, 'Cadastro realizado com sucesso!')
-            return redirect('habilita:home')
+            return redirect('habilita:cliente_home')
         messages.error(request, 'Erro ao cadastrar. Verifique os dados abaixo.')
     else:
         form = ClienteForm()
 
     return render(request, 'habilita/cadastro.html', {'form': form})
+
+
+

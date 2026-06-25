@@ -6,9 +6,9 @@ from django.db import models
 # Cliente
 class Cliente(models.Model):
     nome = models.CharField(max_length=300)
-    cpf = models.CharField(max_length=14, unique=True)
+    cpf = models.CharField(max_length=11, unique=True)
     email = models.EmailField(unique=True)
-    telefone = models.CharField(max_length=15)
+    telefone = models.CharField(max_length=11)
     senha = models.CharField(max_length=128)
     data_criacao = models.DateTimeField(auto_now_add=True)
     ativo = models.BooleanField(default=True)

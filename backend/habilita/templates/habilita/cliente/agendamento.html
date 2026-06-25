@@ -1,170 +1,73 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../backend/base/static/css/agendamento.css">
-    <title>Agendamento - Habilita+</title>
+{% extends 'templates/base.html' %}
+{% load static %}
 
-</head>
-<body>
+{% block title %}Habilita+ - Agendamento{% endblock %}
 
-<header class="header">
-    <nav class="navbar">
+{% block extra_css %}
+  <link rel="stylesheet" href="{% static 'css/app/agendamento.css' %}" />
+{% endblock %}
 
-        <img src="../assets/logo.png" alt="Habilita+ Logo" class="logo">
+{% block content %}
+  <section class="page-header">
+    <h1>Agendamento</h1>
+    <p>Agende suas aulas práticas e exames</p>
+  </section>
 
-        <ul class="menu">
-            <li><a href="dashboard.html">Dashboard</a></li>
-            <li><a href="#" class="active">Agendamento</a></li>
-            <li><a href="meus-agendamentos.html">Meus Agendamentos</a></li>
-        </ul>
+  <section class="tabs">
+    <button class="tab active">Aulas Práticas</button>
+    <button class="tab">Aulas Teóricas</button>
+    <button class="tab">Exames</button>
+  </section>
 
-        <div class="nav-actions">
-            <button aria-label="Notificações">🔔</button>
-            <button aria-label="Perfil">👤</button>
-            <button aria-label="Sair">↪</button>
+  <section class="scheduler-grid">
+    <article class="card">
+      <h2>📅 Selecione a Data</h2>
+      <p>Escolha o dia da sua aula prática</p>
+
+      
+    </article>
+
+    <article class="card">
+      <h2>🕒 Detalhes da Aula</h2>
+      <p>Configure horário e instrutor</p>
+
+      <form class="schedule-form">
+        <div class="field">
+          <label>Categoria</label>
+          <select>
+            <option>Selecione a categoria</option>
+            <option>B</option>
+            <option>A</option>
+          </select>
         </div>
 
-    </nav>
-</header>
+        <div class="field">
+          <label>Instrutor</label>
+          <select>
+            <option>Selecione um instrutor</option>
+            <option>Carlos Silva</option>
+            <option>Maria Souza</option>
+          </select>
+        </div>
 
-<main class="container">
+        <div class="field">
+          <label>Horário Disponível</label>
 
-    <section class="page-header">
-        <h1>Agendamento</h1>
-        <p>Agende suas aulas práticas e exames</p>
-    </section>
+          <div class="time-grid">
+            <button type="button">08:00</button>
+            <button type="button">09:00</button>
+            <button type="button">10:00</button>
+            <button type="button">11:00</button>
 
-    <section class="tabs">
-        <button class="tab active">Aulas Práticas</button>
-        <button class="tab">Aulas Teóricas</button>
-        <button class="tab">Exames</button>
-    </section>
+            <button type="button">14:00</button>
+            <button type="button">15:00</button>
+            <button type="button">16:00</button>
+            <button type="button">17:00</button>
+          </div>
+        </div>
 
-    <section class="scheduler-grid">
-
-        <article class="card">
-
-            <h2>📅 Selecione a Data</h2>
-            <p>Escolha o dia da sua aula prática</p>
-
-            <div class="calendar">
-
-                <div class="calendar-header">
-                    <button>&lt;</button>
-                    <span>Junho 2026</span>
-                    <button>&gt;</button>
-                </div>
-
-                <div class="weekdays">
-                    <span>Su</span>
-                    <span>Mo</span>
-                    <span>Tu</span>
-                    <span>We</span>
-                    <span>Th</span>
-                    <span>Fr</span>
-                    <span>Sa</span>
-                </div>
-
-                <div class="days">
-                    <button class="disabled">31</button>
-                    <button>1</button>
-                    <button class="selected">2</button>
-                    <button>3</button>
-                    <button>4</button>
-                    <button>5</button>
-                    <button>6</button>
-
-                    <button>7</button>
-                    <button>8</button>
-                    <button>9</button>
-                    <button>10</button>
-                    <button>11</button>
-                    <button>12</button>
-                    <button>13</button>
-
-                    <button>14</button>
-                    <button>15</button>
-                    <button>16</button>
-                    <button>17</button>
-                    <button>18</button>
-                    <button>19</button>
-                    <button>20</button>
-
-                    <button>21</button>
-                    <button>22</button>
-                    <button>23</button>
-                    <button>24</button>
-                    <button>25</button>
-                    <button>26</button>
-                    <button>27</button>
-
-                    <button>28</button>
-                    <button>29</button>
-                    <button>30</button>
-                    <button class="disabled">1</button>
-                    <button class="disabled">2</button>
-                    <button class="disabled">3</button>
-                    <button class="disabled">4</button>
-                </div>
-
-            </div>
-
-        </article>
-
-        <article class="card">
-
-            <h2>🕒 Detalhes da Aula</h2>
-            <p>Configure horário e instrutor</p>
-
-            <form class="schedule-form">
-
-                <div class="field">
-                    <label>Categoria</label>
-                    <select>
-                        <option>Selecione a categoria</option>
-                        <option>B</option>
-                        <option>A</option>
-                    </select>
-                </div>
-
-                <div class="field">
-                    <label>Instrutor</label>
-                    <select>
-                        <option>Selecione um instrutor</option>
-                        <option>Carlos Silva</option>
-                        <option>Maria Souza</option>
-                    </select>
-                </div>
-
-                <div class="field">
-                    <label>Horário Disponível</label>
-
-                    <div class="time-grid">
-                        <button type="button">08:00</button>
-                        <button type="button">09:00</button>
-                        <button type="button">10:00</button>
-                        <button type="button">11:00</button>
-
-                        <button type="button">14:00</button>
-                        <button type="button">15:00</button>
-                        <button type="button">16:00</button>
-                        <button type="button">17:00</button>
-                    </div>
-                </div>
-
-                <button class="confirm-btn" type="submit">
-                    Confirmar Agendamento
-                </button>
-
-            </form>
-
-        </article>
-
-    </section>
-
-</main>
-
-</body>
-</html>
+        <button class="confirm-btn" type="submit">Confirmar Agendamento</button>
+      </form>
+    </article>
+  </section>
+{% endblock %}

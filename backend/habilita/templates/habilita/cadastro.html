@@ -10,94 +10,67 @@
   <body>
     <main class="auth-page">
       <header class="brand">
-        
-        <div class="brand__img" aria-hidden="true">
-            <img src="{% static 'img/logo.png' %}" alt="Logo Habilita+" style="width: 400px; height: 400px;" />
-        </div>
-
-        <h1>Habilita+</h1>
-
+        <img src="{% static 'img/logo.png' %}" alt="Logo Habilita+" style="width: 400px; height: 400px;" /> 
         <p>Sua jornada para a CNH começa aqui</p>
       </header>
 
       <section class="card" aria-labelledby="titulo-login">
         <h2 id="titulo-login">Bem-vindo</h2>
 
-        <p class="subtitle">Entre ou crie sua conta para continuar</p>
+        <p class="subtitle">Crie sua conta para continuar</p>
 
-        <div class="tabs">
-          <button class="tab active" type="button" data-tab="login">Entrar</button>
-
-          <button class="tab" type="button" data-tab="cadastro">Cadastrar</button>
-        </div>
-
-        <form id="loginForm" class="form active">
-          <div class="field">
-            <label for="email">E-mail</label>
-
-            <input type="email" id="email" placeholder="seu@email.com" required />
-          </div>
-
-          <div class="field">
-            <label for="senha">Senha</label>
-
-            <input type="password" id="senha" required />
-          </div>
-
-          <button type="submit" class="btn-primary">Entrar</button>
-
-          <a href="#" class="forgot-password">Esqueci minha senha</a>
-        </form>
-
-        <form id="cadastroForm" class="form" method="post" action="">
+        <!--
+          Formulário de cadastro de cliente.
+          - method="POST": envia dados sensíveis com segurança.
+          - action: rota nomeada Django para tratamento do cadastro.
+          - CSRF token: proteção importante contra ataques de falsificação de requisição.
+        -->
+        <form id="cadastroForm" class="form active" method="POST" action="{% url 'habilita:cadastrar_cliente' %}">
           {% csrf_token %}
 
-          {% if messages %}
-            <div class="messages">
-              {% for message in messages %}
-                <div class="message {{ message.tags }}">{{ message }}</div>
-              {% endfor %}
-            </div>
-          {% endif %}
-
-          {{ form.non_field_errors }}
-
+          <!-- Campo de nome completo do cliente -->
           <div class="field">
             <label for="{{ form.nome.id_for_label }}">Nome completo</label>
             {{ form.nome }}
             {{ form.nome.errors }}
           </div>
 
+          <!-- Campo de CPF, validado no backend por regra de negócio -->
           <div class="field">
             <label for="{{ form.cpf.id_for_label }}">CPF</label>
             {{ form.cpf }}
             {{ form.cpf.errors }}
           </div>
 
+          <!-- Campo de e-mail para autenticação e contato -->
           <div class="field">
             <label for="{{ form.email.id_for_label }}">E-mail</label>
             {{ form.email }}
             {{ form.email.errors }}
           </div>
 
+          <!-- Campo de telefone para contato adicional -->
           <div class="field">
             <label for="{{ form.telefone.id_for_label }}">Telefone</label>
             {{ form.telefone }}
             {{ form.telefone.errors }}
           </div>
 
+          <!-- Campo de senha com validação de segurança no formulário -->
           <div class="field">
             <label for="{{ form.senha.id_for_label }}">Senha</label>
             {{ form.senha }}
             {{ form.senha.errors }}
           </div>
 
+          <!-- Confirmar senha garante que o usuário digitou a senha corretamente -->
           <div class="field">
             <label for="{{ form.confirmar_senha.id_for_label }}">Confirmar Senha</label>
             {{ form.confirmar_senha }}
             {{ form.confirmar_senha.errors }}
           </div>
 
+          <!-- Botão de submissão inicia o fluxo de criação de usuário -->
           <button type="submit" class="btn-primary">Criar Conta</button>
         </form>
       </section>

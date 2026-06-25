@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
 # View para a página pública
-def home(request):
-    return render(request, 'habilita/index.html')
+def index(request):
+    return render(request, 'habilita/index.html', {'titulo_aba': 'Home'})
  
