@@ -3,7 +3,7 @@ from django.db import models
 # Create your models here.
 
 # Arrumar as ForeignKeys e ver se coloca slug ou id
-
+# Cliente
 class Cliente(models.Model):
     nome = models.CharField(max_length=300)
     cpf = models.CharField(max_length=11, unique=True)
