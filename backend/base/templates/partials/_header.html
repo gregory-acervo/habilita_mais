@@ -1,9 +1,9 @@
 {% load static %}
-<header>
+<header class="header">
   <nav class="navbar">
     
-      <a href=""><img src="{% static 'img/logo.png' %}" alt="Habilita+" /></a>
-      <ul class="navbar">
+      <a href="{% url 'habilita:cliente_home' %}"><img src="{% static 'img/logo.png' %}" alt="Habilita+" /></a>
+      <ul class="menu">
         <li><a href="{% url 'habilita:cliente_home' %}" class="active">Página Inicial</a>
         </li>
         <li>

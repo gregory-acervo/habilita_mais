@@ -110,13 +110,19 @@ body {
 .nav-actions {
     display: flex;
     gap: .75rem;
+    align-items: center;
 }
 
+.nav-actions a,
 .nav-actions button {
     border: none;
     background: none;
     cursor: pointer;
     font-size: 1.1rem;
+    color: inherit;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
 }
 
 .home {
