@@ -87,19 +87,13 @@ ol {
 :root {
   --bg-primary: #efe7dc;
   --bg-secondary: #f5f5f5;
-
   --text-primary: #1e1e28;
   --text-secondary: #6d6d78;
-
   --accent: #f4b400;
   --accent-hover: #e5a700;
-
   --border: #d6d6d6;
-
   --success: #17a34a;
-
   --radius: 12px;
-
   --font: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
