@@ -1,0 +1,264 @@
+/* 
+
+//Seção: CSS Reset (Manter para o css público)
+//Função: Manter o CSS padrão em qualquer navegador
+
+*/
+
+/* Padrão box-sizing para ser mais intuitivo */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remoção da margem padrão */
+*:not(dialog) {
+  margin: 0;
+}
+
+/* Ativa animações quando palavras-chave são usadas */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+
+
+/* Renderização do texto */
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Padrão para mídias */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* Padrão de fontes para formulários */
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Quebra de palavra no limite da tela */
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/* Evita palavras isoladas */
+p{
+  text-wrap: pretty;
+}
+
+/* Distribui e equilibra os textos (equaliza) */
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
+/* Remove sublinhado do link */
+a {
+  text-decoration: none;
+}
+
+/* Remove os marcadores das listas */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Isola e evita problemas com z-root em Reack e Node.js */
+#root, #__next {
+  isolation: isolate;
+}
+
+/* =========================
+   VARIABLES
+========================= */
+
+:root {
+  --bg-primary: #efe7dc;
+  --bg-secondary: #f5f5f5;
+
+  --text-primary: #1e1e28;
+  --text-secondary: #6d6d78;
+
+  --accent: #f4b400;
+  --accent-hover: #e5a700;
+
+  --border: #d6d6d6;
+
+  --success: #17a34a;
+
+  --radius: 12px;
+
+  --font: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* =========================
+   BASE
+========================= */
+
+body {
+  font-family: var(--font);
+  background: #ffffff;
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+  background: var(--bg-primary);
+  min-height: 72vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 80px 24px;
+}
+
+.hero__container {
+  width: 100%;
+  max-width: 900px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero__logo {
+  width: 440px;
+  margin-bottom: 20px;
+}
+
+.hero__content {
+  max-width: 650px;
+  text-align: center;
+}
+
+.hero__content h1 {
+  font-size: 2.1rem;
+  line-height: 1.3;
+  font-weight: 500;
+  letter-spacing: -0.5px;
+}
+
+.hero__content span {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.hero__actions {
+  display: flex;
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.btn {
+  min-width: 170px;
+  height: 52px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: var(--radius);
+
+  font-size: 1rem;
+  font-weight: 600;
+
+  transition:
+    background 0.25s ease,
+    border 0.25s ease,
+    transform 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn--primary {
+  background: var(--accent);
+  color: #1d1d1d;
+}
+
+.btn--primary:hover {
+  background: var(--accent-hover);
+}
+
+.btn--secondary {
+  border: 1px solid var(--border);
+  background: #ffffff;
+  color: #3a3a3a;
+}
+
+/* =========================
+   ABOUT
+========================= */
+
+.about {
+  background: var(--bg-secondary);
+  padding: 90px 24px;
+}
+
+.about__container {
+  max-width: 900px;
+  margin: 0 auto;
+
+  text-align: center;
+}
+
+.about__container h2 {
+  font-size: 3rem;
+  line-height: 1.1;
+  font-weight: 800;
+  margin-bottom: 18px;
+}
+
+.about__container p {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 64px 20px;
+  }
+
+  .hero__content h1 {
+    font-size: 1.7rem;
+  }
+
+  .hero__actions {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .about__container h2 {
+    font-size: 2.2rem;
+  }
+}

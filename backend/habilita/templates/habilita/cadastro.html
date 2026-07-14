@@ -1,0 +1,79 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/public/cadastro.css' %}" />
+    <title>Habilita+</title>
+  </head>
+  <body>
+    <main class="auth-page">
+      <header class="brand">
+        <img src="{% static 'img/logo.png' %}" alt="Logo Habilita+" style="width: 400px; height: 400px;" /> 
+        <p>Sua jornada para a CNH começa aqui</p>
+      </header>
+
+      <section class="card" aria-labelledby="titulo-login">
+        <h2 id="titulo-login">Bem-vindo</h2>
+
+        <p class="subtitle">Crie sua conta para continuar</p>
+
+        <!--
+          Formulário de cadastro de cliente.
+          - method="POST": envia dados sensíveis com segurança.
+          - action: rota nomeada Django para tratamento do cadastro.
+          - CSRF token: proteção importante contra ataques de falsificação de requisição.
+        -->
+        <form id="cadastroForm" class="form active" method="POST" action="{% url 'habilita:cadastrar_cliente' %}">
+          {% csrf_token %}
+
+          <!-- Campo de nome completo do cliente -->
+          <div class="field">
+            <label for="{{ form.nome.id_for_label }}">Nome completo</label>
+            {{ form.nome }}
+            {{ form.nome.errors }}
+          </div>
+
+          <!-- Campo de CPF, validado no backend por regra de negócio -->
+          <div class="field">
+            <label for="{{ form.cpf.id_for_label }}">CPF</label>
+            {{ form.cpf }}
+            {{ form.cpf.errors }}
+          </div>
+
+          <!-- Campo de e-mail para autenticação e contato -->
+          <div class="field">
+            <label for="{{ form.email.id_for_label }}">E-mail</label>
+            {{ form.email }}
+            {{ form.email.errors }}
+          </div>
+
+          <!-- Campo de telefone para contato adicional -->
+          <div class="field">
+            <label for="{{ form.telefone.id_for_label }}">Telefone</label>
+            {{ form.telefone }}
+            {{ form.telefone.errors }}
+          </div>
+
+          <!-- Campo de senha com validação de segurança no formulário -->
+          <div class="field">
+            <label for="{{ form.senha.id_for_label }}">Senha</label>
+            {{ form.senha }}
+            {{ form.senha.errors }}
+          </div>
+
+          <!-- Confirmar senha garante que o usuário digitou a senha corretamente -->
+          <div class="field">
+            <label for="{{ form.confirmar_senha.id_for_label }}">Confirmar Senha</label>
+            {{ form.confirmar_senha }}
+            {{ form.confirmar_senha.errors }}
+          </div>
+
+          <!-- Botão de submissão inicia o fluxo de criação de usuário -->
+          <button type="submit" class="btn-primary">Criar Conta</button>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>

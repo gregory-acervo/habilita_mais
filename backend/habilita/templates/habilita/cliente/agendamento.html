@@ -1,0 +1,119 @@
+{% extends 'templates/base.html' %}
+{% load static %}
+
+{% block title %}Habilita+ - Agendamento{% endblock %}
+
+{% block extra_css %}
+  <link rel="stylesheet" href="{% static 'css/app/agendamento.css' %}" />
+{% endblock %}
+
+{% block content %}{% comment %}  {% endcomment %}
+  <section class="page-header">
+    <h1>Agendamento</h1>
+    <p>Agende suas aulas práticas e exames</p>
+  </section>
+
+  <section class="tabs">
+    <button class="tab active">Aulas Práticas</button>
+    <button class="tab">Aulas Teóricas</button>
+    <button class="tab">Exames</button>
+  </section>
+
+  <section class="scheduler-grid">
+    <article class="card">
+      <h2>📅 Selecione a Data</h2>
+      <p>Escolha o dia da sua aula prática</p>
+
+      {% if calendar %}
+      <div class="calendar-wrapper" style="overflow-x: auto; margin-top: 20px;">
+          {{ calendar|safe }}
+      </div>
+      {% else %}
+      <p><em>Calendário indisponível no momento.</em></p>
+      {% endif %}
+      </article>
+
+    <article class="card">
+      <h2>🕒 Detalhes da Aula</h2>
+      <p>Configure horário e instrutor</p>
+
+      <form class="schedule-form">
+        <div class="field">
+          <label>Categoria</label>
+          <select>
+            <option>Selecione a categoria</option>
+            <option>B</option>
+            <option>A</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label>Instrutor</label>
+          <select>
+            <option>Selecione um instrutor</option>
+            <option>Carlos Silva</option>
+            <option>Maria Souza</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label>Horário Disponível</label>
+
+          <div class="time-grid">
+            <button type="button">08:00</button>
+            <button type="button">09:00</button>
+            <button type="button">10:00</button>
+            <button type="button">11:00</button>
+
+            <button type="button">14:00</button>
+            <button type="button">15:00</button>
+            <button type="button">16:00</button>
+            <button type="button">17:00</button>
+          </div>
+        </div>
+
+        <button class="confirm-btn" type="submit">Confirmar Agendamento</button>
+      </form>
+    </article>
+  </section>
+<<<<<<< HEAD
+
+  <script>
+document.addEventListener("DOMContentLoaded", function() {
+    
+    // --- LÓGICA DO CALENDÁRIO ---
+    const diasCalendario = document.querySelectorAll('.calendar-wrapper td');
+    
+    diasCalendario.forEach(dia => {
+        // Verifica se a célula não está vazia (para não clicar em espaços em branco do mês)
+        if(dia.innerText.trim() !== "" && dia.innerText.trim() !== "&nbsp;") {
+            dia.addEventListener('click', function() {
+                // Remove a seleção de todos os outros dias
+                diasCalendario.forEach(d => d.classList.remove('selected-day'));
+                // Adiciona a seleção no dia clicado
+                this.classList.add('selected-day');
+            });
+        } else {
+            // Tira o "dedinho" de clique dos espaços vazios
+            dia.style.cursor = "default";
+        }
+    });
+
+    // --- LÓGICA DOS HORÁRIOS ---
+    const botoesHorario = document.querySelectorAll('.time-grid button');
+    
+    botoesHorario.forEach(botao => {
+        botao.addEventListener('click', function() {
+            // Remove a seleção de todos os outros horários
+            botoesHorario.forEach(b => b.classList.remove('selected-time'));
+            // Seleciona o horário clicado
+            this.classList.add('selected-time');
+        });
+    });
+
+});
+</script>
+
+=======
+>>>>>>> 0e43f04a1b1f87f5da98bf14e6e880c21ea3d6e8
+{% endblock %}

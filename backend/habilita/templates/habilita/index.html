@@ -1,0 +1,46 @@
+{% load static %} {% comment %}Página Home única, não precisa de template base{% endcomment %}
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/public/index.css' %}" />
+    <title>{{titulo_aba}}</title>
+  </head>
+
+  {% comment %}Corpo principal da página pública: Responsável por apresentar os elementos para guiar o usuário para as etapas de cadastro e login.{% endcomment %}
+
+  <body>
+    <main>
+      {% comment %} Espaço principal do site {% endcomment %}
+      <section class="hero">
+        <div class="hero__container">
+          <div class="hero__logo">
+            <img src="{% static 'img/logo.png' %}" alt="Logo Habilita+" />
+          </div>
+
+          <header class="hero__content">
+            <h1>Sua jornada para a habilitação de maneira simplificada e digital!</h1>
+          </header>
+
+          {% comment %} Botões para tela de cadastro ou login {% endcomment %}
+          <div class="hero__actions">
+            <a href="{% url 'habilita:cadastrar_cliente' %}" class="btn btn--primary">Começar Agora</a>
+
+            <a href="{% url 'habilita:login_cliente' %}" class="btn btn--secondary">Já tenho conta</a>
+          </div>
+        </div>
+      </section>
+
+      {% comment %} Texto sobre o sistema Habilita+ {% endcomment %}
+      <section class="about">
+        <div class="about__container">
+          <h2>Tudo que você precisa em um só lugar</h2>
+          <p>O Habilita+ busca facilitar o gerenciamento da sua agenda de aulas e exames de maneira mais rápida e eficiente!</p>
+        </div>
+      </section>
+
+    </main>
+  </body>
+</html>

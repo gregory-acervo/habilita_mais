@@ -1,0 +1,17 @@
+{% load static %}
+<header class="header">
+  <nav class="navbar">
+    
+      <a href="{% url 'habilita:cliente_home' %}"><img src="{% static 'img/logo.png' %}" alt="Habilita+" /></a>
+      <ul class="menu">
+        <li><a href="{% url 'habilita:cliente_home' %}">Dashboard</a></li>
+        <li><a href="{% url 'habilita:agendamento' %}">Agendamento</a></li>    
+        <li><a href="{% url 'habilita:meus_agendamentos' %}" class="active">Meus Agendamentos</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="#">👤</a>
+        <a href="{% url 'habilita:index' %}">↪</a>
+      </div>
+  </nav>
+</header>

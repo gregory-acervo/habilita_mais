@@ -1,0 +1,166 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meus Agendamentos</title>
+
+    <link rel="stylesheet" href="{% static 'css/app/meus_agendamentos.css' %}">
+    
+    <style>
+        .calendar-section table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+        .calendar-section th, .calendar-section td { border: 1px solid #ddd; padding: 10px; text-align: center; }
+        .calendar-section th { background-color: #f4f4f4; }
+    </style>
+</head>
+<body>
+
+{% include "templates/partials/_header.html" %}
+
+<main class="container">
+
+    <section class="page-header">
+        <h1>Meus Agendamentos</h1>
+        <p>Visualize e gerencie suas aulas agendadas</p>
+    </section>
+
+    {% if calendar %}
+    <section class="calendar-section" style="margin-bottom: 30px;">
+        <h2>Meu Calendário</h2>
+        <div style="overflow-x: auto;">
+            {{ calendar|safe }}
+        </div>
+    </section>
+    {% endif %}
+
+    <section class="summary-card">
+
+        <h2>Resumo Semanal</h2>
+        <p>Aulas agendadas para esta semana</p>
+
+        <div class="summary-grid">
+
+            <article class="summary-box">
+                <span class="summary-number yellow">3</span>
+                <span>Aulas confirmadas</span>
+            </article>
+
+            <article class="summary-box">
+                <span class="summary-number orange">0/3</span>
+                <span>Limite categoria B</span>
+            </article>
+
+            <article class="summary-box">
+                <span class="summary-number blue">0</span>
+                <span>Aulas canceladas</span>
+            </article>
+
+        </div>
+
+    </section>
+
+    <section class="appointments-section">
+
+        <h2 class="section-title success">
+            Agendamentos Confirmados
+        </h2>
+
+        <article class="appointment-card">
+
+            <div class="appointment-icon">
+                🚗
+            </div>
+
+            <div class="appointment-content">
+
+                <div class="appointment-header">
+                    <h3>Aula Prática - Categoria B</h3>
+
+                    <span class="badge confirmed">
+                        Confirmado
+                    </span>
+                </div>
+
+                <p>📅 quarta-feira, 15 de janeiro de 2025</p>
+                <p>🕒 14:00</p>
+                <p>👨‍🏫 Instrutor: Carlos Silva</p>
+
+            </div>
+
+            <button class="delete-btn">
+                🗑
+            </button>
+
+        </article>
+
+        <article class="appointment-card">
+
+            <div class="appointment-icon">
+                🚗
+            </div>
+
+            <div class="appointment-content">
+
+                <div class="appointment-header">
+                    <h3>Aula Prática - Categoria B</h3>
+
+                    <span class="badge confirmed">
+                        Confirmado
+                    </span>
+                </div>
+
+                <p>📅 quinta-feira, 16 de janeiro de 2025</p>
+                <p>🕒 10:00</p>
+                <p>👨‍🏫 Instrutor: Maria Santos</p>
+
+            </div>
+
+            <button class="delete-btn">
+                🗑
+            </button>
+
+        </article>
+
+    </section>
+
+    <section class="appointments-section">
+
+        <h2 class="section-title pending">
+            Agendamentos Pendentes
+        </h2>
+
+        <article class="appointment-card">
+
+            <div class="appointment-icon pending-icon">
+                🚗
+            </div>
+
+            <div class="appointment-content">
+
+                <div class="appointment-header">
+                    <h3>Aula Prática - Categoria B</h3>
+
+                    <span class="badge pending-badge">
+                        Pendente
+                    </span>
+                </div>
+
+                <p>📅 sábado, 18 de janeiro de 2025</p>
+                <p>🕒 15:00</p>
+                <p>👨‍🏫 Instrutor: João Pedro</p>
+
+            </div>
+
+            <button class="delete-btn">
+                🗑
+            </button>
+
+        </article>
+
+    </section>
+
+</main>
+
+</body>
+</html>

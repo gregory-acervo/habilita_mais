@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/public/login.css' %}" />
+    <title>Habilita+</title>
+  </head>
+  <body>
+    <main class="auth-page">
+      <header class="brand">
+        <img src="{% static 'img/logo.png' %}" alt="Logo Habilita+" style="width: 400px; height: 400px;" /> 
+        <p>Sua jornada para a CNH começa aqui</p>
+      </header>
+
+      <section class="card" aria-labelledby="titulo-login">
+        <h2 id="titulo-login">Bem-vindo</h2>
+
+        <p class="subtitle">Entre com a sua conta para continuar</p>
+
+        <!--
+          Formulário de login do cliente.
+          - method="POST": envia credenciais de forma apropriada.
+          - action: rota nomeada Django para autenticação.
+          - CSRF token: proteção contra requisições forjadas.
+        -->
+        <form id="loginForm" class="form active" method="POST" action="{% url 'habilita:login_cliente' %}">
+          {% csrf_token %}
+
+          <!-- Campo de e-mail usado para identificar o cliente no banco -->
+          <div class="field">
+            <label for="{{ form.email.id_for_label }}">E-mail</label>
+            {{ form.email }}
+            {{ form.email.errors }}
+          </div>
+
+          <!-- Campo de senha que será comparado com o hash armazenado -->
+          <div class="field">
+            <label for="{{ form.senha.id_for_label }}">Senha</label>
+            {{ form.senha }}
+            {{ form.senha.errors }}
+          </div>
+
+          <!-- Botão de envio dispara a autenticação no backend -->
+          <button type="submit" class="btn-primary">Entrar</button>
+
+          <!-- Link para recuperação de senha, caso o usuário tenha esquecido -->
+          <a href="#" class="forgot-password">Esqueci minha senha</a>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>
