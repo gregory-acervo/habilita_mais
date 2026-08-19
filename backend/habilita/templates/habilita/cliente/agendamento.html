@@ -1,9 +1,10 @@
-{% extends 'templates/base.html' %}
+{% extends 'base.html' %}
 {% load static %}
 
 {% block title %}Habilita+ - Agendamento{% endblock %}
 
 {% block extra_css %}
+  {{block.super}}
   <link rel="stylesheet" href="{% static 'css/app/agendamento.css' %}" />
 {% endblock %}
 
@@ -76,7 +77,6 @@
       </form>
     </article>
   </section>
-<<<<<<< HEAD
 
   <script>
 document.addEventListener("DOMContentLoaded", function() {
@@ -114,6 +114,4 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 </script>
 
-=======
->>>>>>> 0e43f04a1b1f87f5da98bf14e6e880c21ea3d6e8
 {% endblock %}

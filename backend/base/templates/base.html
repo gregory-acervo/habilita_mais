@@ -11,7 +11,7 @@
   </head>
 
   <body>
-    {% include 'templates/partials/_header.html' %}
+    {% include 'partials/_header.html' %}
 
     <main class="container main-content">
       {% block content %}
@@ -19,7 +19,7 @@
       {% endblock %}
     </main>
 
-    {% include 'templates/partials/_footer.html' %}
+    {% include 'partials/_footer.html' %}
 
     <script src="{% static 'scripts/main.js' %}"></script>
     {% block extra_js %}
