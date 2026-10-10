@@ -16,7 +16,7 @@
 
   /*  Conteúdo do Card  */
 .card {
-    background: white;
+    background: #8d8bac;
 
     padding: 1.5rem;
     border-radius: var(--radius);

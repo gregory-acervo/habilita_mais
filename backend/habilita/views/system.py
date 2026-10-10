@@ -4,7 +4,7 @@ from ..models import AulaTeorica, AulaPratica, ExameTeorico, ExamePratico
 from calendar import HTMLCalendar
 
 def cliente_home(request):
-    return render(request, 'habilita/cliente/home.html')
+    return render(request, 'habilita/cliente/home.html', {'titulo_aba': 'Home'})
 
 def agendamento(request, year=None, month=None):
     # Se ano ou mês não forem passados, usa a data de hoje
@@ -16,7 +16,12 @@ def agendamento(request, year=None, month=None):
 
     # Gera o calendário com os inteiros recebidos
     calendar = HTMLCalendar().formatmonth(year, month)
-    return render(request, 'habilita/cliente/agendamento.html', {'calendar': calendar})
+    return render(request, 
+                  'habilita/cliente/agendamento.html', 
+                  {'calendar': calendar,
+                'titulo_aba': 'Agendamento'
+                }
+                  )
 
 def meus_agendamentos(request):
     # Pega o ano e mês atuais
@@ -24,7 +29,14 @@ def meus_agendamentos(request):
     calendar = HTMLCalendar().formatmonth(hoje.year, hoje.month)
     
     # Envia o calendário no contexto
-    return render(request, 'habilita/cliente/meus_agendamentos.html', {'calendar': calendar}) 
+    return render(
+        request, 
+        'habilita/cliente/meus_agendamentos.html', 
+        {
+        'calendar': calendar,
+        'titulo_aba': 'Meus Agendamentos'
+        }
+    ) 
 
 def listar_aulas(request):
     aulas = AulaTeorica.objects.all(), AulaPratica.objects.all()

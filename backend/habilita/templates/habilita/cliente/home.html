@@ -1,25 +1,16 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %}Habilita+ - Página Inicial{% endblock %}
 {% block extra_css %}
     {{block.super}}
     <link rel="stylesheet" href="{% static 'css/app/home.css' %}" />
 {% endblock %}
-{% block content %} {% comment %} Conteúdo reutilizável chamado content {% endcomment %}
-<main class="home">
 
+{% block content %} {% comment %} Conteúdo reutilizável chamado content {% endcomment %}
+<main class=home>
     <section class="welcome">
         <h1>Bem-vindo de volta!</h1>
         <p>Acompanhe seu progresso e próximas etapas</p>
     </section>
-
-    <section class="">
-        <article class="card">
-            <h2>Próximas Aulas</h2>
-        </article>
-        
-    </section>
-
 </main>
 {% endblock %}

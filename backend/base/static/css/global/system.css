@@ -1,3 +1,5 @@
+/* || CSS Reset */
+
 /* 1. Modelo de box-sizing mais intuitivo */
 *, *::before, *::after {
   box-sizing: border-box;
@@ -69,9 +71,7 @@ ul, ol {
   padding: 0;
 }
 
-/*
-  11. Cria um contexto de empilhamento raiz para evitar conflitos de camada
-*/
+/* 11. Cria um contexto de empilhamento raiz para evitar conflitos de camada */
 #root, #__next {
   isolation: isolate;
 }
@@ -88,7 +88,7 @@ ul, ol {
     --text: #111827;
     --text-secondary: #6b7280;
 
-    --border: #e5e7eb;
+    --nav-bg: #ffffff;
     --background: #f8fafc;
     --card: #ffffff;
 
@@ -96,19 +96,28 @@ ul, ol {
 
     --radius: 14px;
 }
-/* =========================
-   BODY
-========================= */
+
+/* || Estilos Gerais */
 
 body {
-    font-family: "Segoe UI", sans-serif;
+    font-family: Segoe UI, sans-serif;
     background: var(--background);
     color: var(--text);
 }
 
-/* =========================
-   HEADER
-========================= */
+.container {
+  /* 1. Limite de largura máxima confortável para leitura e UI */
+  width: 100%;
+  max-width: 1400px; 
+  /* 2. Centralização na horizontal */
+  margin-left: auto;
+  margin-right: auto;
+
+  /* 3. Espaçamento interno lateral (evita colar nas margens em ecrãs pequenos) */
+  padding-left: 1.5rem;  
+  padding-right: 1.5rem;
+}
+
 
 .header {
     background: white;
@@ -123,7 +132,6 @@ body {
     display: flex;
     align-items: center;
     padding: 1rem 4rem;
-    background-color: var(--border);
 }
 
 .navbar ul{
@@ -142,7 +150,7 @@ body {
 }
 
 .navbar a:hover{
-    color: var(--primary);
+
     text-decoration: none;
 }
 
@@ -181,11 +189,7 @@ body {
     align-items: center;
 }
 
-.home {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 2rem;
-}
+/* || Utensílios */
 
 /* =========================
    RESPONSIVIDADE
