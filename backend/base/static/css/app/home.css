@@ -1,12 +1,8 @@
 /* Mensagem "Bem-Vindo" */
 
-.welcome {
-    margin-bottom: 2rem;
-}
-
 .welcome h1 {
     font-size: 2rem;
-    margin-bottom: .5rem;
+    margin-bottom: 0.3rem;
 }
 
 .welcome p {
@@ -14,23 +10,7 @@
 }
 
 
-  /*  Conteúdo do Card  */
-.card {
-    background: #8d8bac;
-
-    padding: 1.5rem;
-    border-radius: var(--radius);
-
-    box-shadow: var(--shadow);
-
-    min-height: 300px;
-}
-
-.card h2 {
-    margin-bottom: 1rem;
-}
-
-/* Responsividade */
+/* Responsividade (trabalhar nesse ponto futuramente)
 
 @media (max-width: 1024px) {
 
@@ -50,4 +30,4 @@
         gap: 1rem;
     }
 
-}
+}*/

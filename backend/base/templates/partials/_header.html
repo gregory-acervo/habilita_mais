@@ -1,7 +1,8 @@
 {% load static %}
 <header class="header">
+  
   <nav class="navbar">
-    
+<div class="container navbar-content">
       <a href="{% url 'habilita:cliente_home' %}"><img src="{% static 'img/logo.png' %}" alt="Habilita+" class="header-logo"/></a>
       <ul class="menu">
         <li><a href="{% url 'habilita:agendamento' %}">Agendamento</a></li>    
@@ -12,5 +13,6 @@
         <a href="#">👤</a>
         <a href="{% url 'habilita:index' %}">↪</a>
       </div>
-  </nav>
+</div>
+    </nav>
 </header>
