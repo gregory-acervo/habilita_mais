@@ -1,18 +1,25 @@
 {% load static %}
 <header class="header">
-  
   <nav class="navbar">
-<div class="container navbar-content">
-      <a href="{% url 'habilita:cliente_home' %}"><img src="{% static 'img/logo.png' %}" alt="Habilita+" class="header-logo"/></a>
+    <div class="container navbar-content">
+      <a href="{% url 'habilita:cliente_home' %}"><img src="{% static 'img/logo.png' %}" alt="Habilita+" class="header-logo" /></a>
       <ul class="menu">
-        <li><a href="{% url 'habilita:agendamento' %}">Agendamento</a></li>    
-        <li><a href="{% url 'habilita:meus_agendamentos' %}">Meus Agendamentos</a></li>
+        <li>
+          <a href="{% url 'habilita:agendamento' %}">Agendamento</a>
+        </li>
+        <li>
+          <a href="{% url 'habilita:meus_agendamentos' %}">Meus Agendamentos</a>
+        </li>
       </ul>
 
       <div class="nav-actions">
         <a href="#">👤</a>
-        <a href="{% url 'habilita:index' %}">↪</a>
+        <a href="{% url 'habilita:index' %}">
+          <svg class="icon" viewBox="0 0 640 640" aria-hidden="true">
+            <use href="{% static 'icon/exit.svg' %}#exit-icon"></use>
+          </svg>
+        </a>
       </div>
-</div>
-    </nav>
+    </div>
+  </nav>
 </header>
