@@ -1,10 +1,19 @@
 from django.shortcuts import render, get_object_or_404
 import datetime
-from ..models import AulaTeorica, AulaPratica, ExameTeorico, ExamePratico
+from ..models import *
 from calendar import HTMLCalendar
 
 def cliente_home(request):
+    """ Lê o ID do cliente e redireciona se não tiver sessão.
+    cliente_id = request.session.get('cliente_id')
+    if not cliente_id:
+        return redirect('habilita:login_cliente')"""
+    
+    #cliente = get_object_or_404(Cliente, pk=cliente_id)
+    #primeiro_nome = cliente.nome.split()[0]
     return render(request, 'habilita/cliente/home.html', {'titulo_aba': 'Home'})
+
+
 
 def agendamento(request, year=None, month=None):
     # Se ano ou mês não forem passados, usa a data de hoje
@@ -19,7 +28,8 @@ def agendamento(request, year=None, month=None):
     return render(request, 
                   'habilita/cliente/agendamento.html', 
                   {'calendar': calendar,
-                'titulo_aba': 'Agendamento'
+                'titulo_aba': 'Agendamento',
+                'tipos_agendamento': TipoAgendamento.choices,
                 }
                   )
 

@@ -16,5 +16,3 @@ def cadastrar_cliente(request):
 
     return render(request, 'habilita/cadastro.html', {'form': form})
 
-
-

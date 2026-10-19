@@ -1,9 +1,9 @@
 from django.db import models
 
-# Create your models here.
+# Crie seus models aqui!
 
+# Model(s) para Clientes
 # Arrumar as ForeignKeys e ver se coloca slug ou id
-# Cliente
 class Cliente(models.Model):
     nome = models.CharField(max_length=300)
     cpf = models.CharField(max_length=11, unique=True)
@@ -19,6 +19,13 @@ class Cliente(models.Model):
 
     def __str__(self):
         return self.nome
+
+# Model(s) para Agendamentos
+class TipoAgendamento(models.TextChoices):
+    AULA_PRATICA = "aula_pratica", "Aulas Práticas"
+    AULA_TEORICA = "aula_teorica", "Aulas Teóricas"
+    EXAME_PRATICO = "exame_pratico", "Exames Práticos"
+    EXAME_TEORICO = "exame_teorico", "Exames Teóricos"
 
 
 class EtapaFormacao(models.Model):

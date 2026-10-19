@@ -128,11 +128,6 @@ body {
   color: var(--text);
 }
 
-.nav-actions .icon {
-  width: 24px;
-  height: 24px;
-}
-
 .container {
   /* 1. Limite de largura máxima confortável para leitura e UI */
   width: 100%;
@@ -140,14 +135,13 @@ body {
   /* 2. Centralização na horizontal */
   margin-left: auto;
   margin-right: auto;
-
   /* 3. Espaçamento interno lateral (evita colar nas margens em ecrãs pequenos) */
   padding-left: 1.5rem;
   padding-right: 1.5rem;
 }
 
 .header {
-  background: white;
+  background: var(--background);
   border-bottom: 1px solid var(--border);
   position: sticky;
   top: 0;
@@ -158,80 +152,45 @@ body {
   display: block;
   width: clamp(90px, 10vw, 150px);
   height: auto;
-  max-width: 150px;
-  object-fit: contain;
   flex-shrink: 0;
 }
 
 .navbar {
   background-color: var(--background);
   width: 100%;
-
 }
 
 .navbar-content {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
 
-.navbar ul {
-  list-style-type: none;
+.nav-actions {
+  justify-self: end;
 }
 
-.navbar li {
-  justify-content: left;
-  padding: 1rem;
-}
-
-.navbar a {
-  color: black;
-  text-decoration: none;
-
-}
-
-.navbar a:hover {
-
-  text-decoration: none;
+.nav-actions .icon {
+  width: 24px;
+  height: 24px;
 }
 
 .menu {
   display: flex;
-  list-style: none;
+  align-items: center;
   gap: 2rem;
 }
 
 .menu a {
-  text-decoration: none;
   color: var(--text);
-  font-size: .95rem;
-  transition: .3s;
+  font-size: 1.1rem;
+  transition: .4s;
 }
 
 .menu a:hover {
   color: var(--primary);
 }
-
-.nav-actions {
-  display: flex;
-  gap: .75rem;
-  align-items: center;
-}
-
-.nav-actions a,
-.nav-actions button {
-  border: none;
-  background: none;
-  cursor: pointer;
-  font-size: 1.1rem;
-  color: inherit;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-}
-
-/* || Utensílios */
 
 /* || Responsividade */

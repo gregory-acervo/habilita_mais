@@ -1,11 +1,5 @@
 /* PAGE */
 
-.container{
-    max-width:1200px;
-    margin:auto;
-    padding:2rem;
-}
-
 .page-header{
     margin-bottom:2rem;
 }
@@ -250,17 +244,4 @@
 
 .calendar-wrapper table td.noday:hover {
     background-color: transparent;
-}
-
-/* RESPONSIVO */
-
-@media (max-width: 900px){
-
-    .scheduler-grid{
-        grid-template-columns:1fr;
-    }
-
-    .menu{
-        display:none;
-    }
 }
